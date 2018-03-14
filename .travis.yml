@@ -8,6 +8,14 @@ matrix:
     - os: osx
       osx_image: xcode9.2
 
+addons:
+  apt:
+    packages:
+      - libsdl2-dev
+
+compiler:
+  - gcc
+
 script:
   - mkdir build
   - cd build/
