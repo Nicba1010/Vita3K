@@ -17,10 +17,16 @@ compiler:
   - gcc
 
 script:
-  - mkdir build
-  - cd build/
-  - cmake -DCMAKE_BUILD_TYPE=Release ..
-  - make -j4
+  - if [ "$TRAVIS_OS_NAME" = "linux" ]; then
+      mkdir build-linux && cd build-linux ;
+      cmake ../src/ ;
+      make -j4 ;
+    else
+      mkdir build ;
+      cd build/ ;
+      cmake -DCMAKE_BUILD_TYPE=Release .. ;
+      make -j4 ;
+    fi;
 before_deploy:
   - cd bin/
   - zip -r Vita3K.zip Vita3K.app
