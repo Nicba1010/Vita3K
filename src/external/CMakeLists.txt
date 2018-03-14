@@ -86,6 +86,7 @@ else()
 	target_link_libraries(unicorn INTERFACE "${UNICORN_LIB}")
 endif()]]
 
+set(UNICORN_ARCHS "arm aarch64 x86")
 add_library(unicorn INTERFACE)
 target_include_directories(unicorn INTERFACE "${CMAKE_CURRENT_SOURCE_DIR}/unicorn/include")
 
