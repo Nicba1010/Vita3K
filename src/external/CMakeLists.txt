@@ -87,7 +87,7 @@ else()
 endif()]]
 
 add_library(unicorn INTERFACE)
-target_include_directories(unicorn INTERFACE" ${CMAKE_CURRENT_SOURCE_DIR}/unicorn/include")
+target_include_directories(unicorn INTERFACE "${CMAKE_CURRENT_SOURCE_DIR}/unicorn/include")
 
 add_library(vita-headers INTERFACE)
 target_include_directories(vita-headers INTERFACE "${CMAKE_CURRENT_SOURCE_DIR}/vita-headers/include")
