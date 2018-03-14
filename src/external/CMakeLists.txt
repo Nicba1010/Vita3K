@@ -71,7 +71,7 @@ if(WIN32)
 	target_link_libraries(winsock INTERFACE WSOCK32 WS2_32)
 endif()
 
-add_library(unicorn INTERFACE)
+#add_library(unicorn INTERFACE)
 #[[if(APPLE)
 	target_include_directories(unicorn INTERFACE "${CMAKE_CURRENT_SOURCE_DIR}/unicorn/macos/include")
 	target_link_libraries(unicorn INTERFACE "${CMAKE_CURRENT_SOURCE_DIR}/unicorn/macos/lib/libunicorn.a")
