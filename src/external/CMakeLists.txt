@@ -72,7 +72,7 @@ if(WIN32)
 endif()
 
 add_library(unicorn INTERFACE)
-if(APPLE)
+#[[if(APPLE)
 	target_include_directories(unicorn INTERFACE "${CMAKE_CURRENT_SOURCE_DIR}/unicorn/macos/include")
 	target_link_libraries(unicorn INTERFACE "${CMAKE_CURRENT_SOURCE_DIR}/unicorn/macos/lib/libunicorn.a")
 elseif(WIN32)
@@ -84,7 +84,10 @@ else()
 	target_include_directories(unicorn INTERFACE "${UNICORN_INCLUDE_DIRS}")
 	find_library(UNICORN_LIB NAMES "${UNICORN_STATIC_LIBRARIES}" PATHS "${UNICORN_LIBRARY_DIRS}")
 	target_link_libraries(unicorn INTERFACE "${UNICORN_LIB}")
-endif()
+endif()]]
+
+add_library(unicorn INTERFACE)
+target_include_directories(unicorn INTERFACE" ${CMAKE_CURRENT_SOURCE_DIR}/unicorn/include")
 
 add_library(vita-headers INTERFACE)
 target_include_directories(vita-headers INTERFACE "${CMAKE_CURRENT_SOURCE_DIR}/vita-headers/include")
