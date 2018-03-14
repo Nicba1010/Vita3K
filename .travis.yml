@@ -1,14 +1,25 @@
 language: cpp
-os: osx
-osx_image: xcode9.2
+
+matrix:
+  include:
+    - os: linux
+      dist: trusty
+      sudo: required
+    - os: osx
+      osx_image: xcode9.2
+    
+compiler:
+  - gcc
+  - clang
+
 script:
-- mkdir build
-- cd build/
-- cmake -DCMAKE_BUILD_TYPE=Release ..
-- make -j4
+  - mkdir build
+  - cd build/
+  - cmake -DCMAKE_BUILD_TYPE=Release ..
+  - make -j4
 before_deploy:
-- cd bin/
-- zip -r Vita3K.zip Vita3K.app
+  - cd bin/
+  - zip -r Vita3K.zip Vita3K.app
 deploy:
   provider: releases
   api_key:
