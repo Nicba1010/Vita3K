@@ -7,7 +7,7 @@ install:
 
 build_script:
  - mkdir build-linux && cd build-linux
- - cmake ../src/
+ - cmake ../
  - make
 
 after_build:
