@@ -1,0 +1,14 @@
+version: '{build}'
+
+image: linux
+
+install:
+ - git submodule init && git submodule update
+
+build_script:
+ - mkdir build-linux && cd build-linux
+ - cmake ../src/
+ - make
+
+after_build:
+ - ls -lash
